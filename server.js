@@ -24,9 +24,6 @@ cloudinary.config({
 });
 
 // builtin__middlewares 🔐;
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(
   cors({
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
@@ -34,6 +31,10 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 
 // routes 📡;
 app.use("/api/users", userRouter);
