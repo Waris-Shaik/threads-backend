@@ -34,9 +34,17 @@ app.use(cors({
   credentials:true,
 }));
 
-// routes 📡;
+// routes 📡; 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/posts", postRouter); 
+
+// initaik route
+app.get('/', (req, res)=>{
+  res.status(200).json({
+    success:true,
+    message: "Welcome to threads-root API",
+  })
+})
 
 // SERVER__PORT 🖥️👽;
 app.listen(PORT, () => {
