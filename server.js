@@ -35,8 +35,8 @@ app.use(cors({
 }));
 
 // routes 📡;
-app.use("/api/users", userRouter);
-app.use("/api/posts", postRouter); 
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/posts", postRouter); 
 
 // SERVER__PORT 🖥️👽;
 app.listen(PORT, () => {
